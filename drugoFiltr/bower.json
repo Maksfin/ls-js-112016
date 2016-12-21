@@ -1,0 +1,11 @@
+{
+  "name": " ",
+  "version": "0.1.0",
+  "dependencies": {
+    "normalize-css": "~3.0.3",
+    "modernizer": "~2.8.2",
+    "jquery": "1.11.3",
+    "jquery.maskedinput": "~1.4.1",
+    "bxslider-4": "~4.2.5"
+  }
+}

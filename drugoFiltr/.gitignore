@@ -1,0 +1,8 @@
+app/bower
+app/*.css
+app/img/*.scss
+app/*.html
+.sass-cache
+node_modules
+%sprite
+dist
