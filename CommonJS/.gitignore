@@ -7,4 +7,3 @@ app/*.html
 .DS_Store?
 node_modules
 %sprite
-dist
