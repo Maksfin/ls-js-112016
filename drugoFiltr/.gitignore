@@ -1,0 +1,10 @@
+app/bower
+app/*.css
+app/img/*.scss
+app/*.html
+.sass-cache
+.DS_Store
+.DS_Store?
+node_modules
+%sprite
+dist

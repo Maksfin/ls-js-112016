@@ -1,0 +1,33 @@
+extends ../main
+
+block title
+	| Друго фильтр
+
+block content
+	main
+		.logo
+			img(src="img/elements/logo.png" alt="")
+		button#signIn.btn.btn-save.btn-open Войти		
+		.drugo-wrap.hide#mainApp
+			header.header
+				h2.header__title Выберите друзей
+				button.text-hide.btn.btn-cross.btn-cross--close#logOut Закрыть приложение
+			.drugo-main
+				.drugo-main__left
+					.drugo-main__top
+						span &#128269;
+						input#inpSearchLeft(type="text" placeholder="Начните вводить имя друга").drugo-main__search
+					h3.drugo-main__title Ваши друзья
+					ul.drugo-main__list#listLeft
+				.drugo-main__right
+					.drugo-main__top
+						span &#128269;
+						input#inpSearchRight(type="text" placeholder="Начните вводить имя друга").drugo-main__search
+					h3.drugo-main__title Ваши друзья
+					ul.drugo-main__list#listRight
+			footer.footer
+				button#saveData.btn.btn-save Сохранить
+
+
+
+

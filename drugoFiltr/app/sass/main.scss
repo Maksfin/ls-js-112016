@@ -1,0 +1,20 @@
+// Initialization 
+@import 'compass';
+
+// Normalize
+@import '_base/_normalize';
+
+// Base settings
+@import '_helpers/_vars';
+
+
+// Base settings
+@import '_base/_overall';
+
+
+// ---------- Section ----------
+@import '_common/_drugo';
+@import '_common/_logo';
+@import '_common/_btn';
+@import '_common/_header';
+@import '_common/_footer';

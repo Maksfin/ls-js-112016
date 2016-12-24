@@ -1,0 +1,18 @@
+//- Vendor JS
+script(src="http://vk.com/js/api/openapi.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js")
+
+//- Main JS
+script(src="js/main.js")
+
+//- Handlebars template
+<script type="text/x-handlebars-template" id="template">
+{{#each list}}
+li.drugo-main__item(draggable="true")
+	.drugo-main__item-info
+		span.hide#id {{uid}}
+		img(src="{{photo_50}}", alt="").drugo-main__item-img
+		span.drugo-main__item-name {{first_name}}&nbsp;{{last_name}}
+	button.text-hide.btn.btn-cross.btn-cross--plus.btn-cross--grey Добавить в список	
+{{/each}}
+</script>

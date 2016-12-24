@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CommonJS and Webpack</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style>
+		.friend {
+				float: left;
+				margin: 15px;
+		}
+		.photo {
+			float: left;
+			margin: 15px;
+			min-width: 200px;
+		}
+
+		.info{
+			font-size: 12px;
+			margin-top: 10px;
+		}
+
+		.glyphicon:not(:first-child) {
+			margin-left: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+    <div id="header"></div>
+
+	 	<div class="btn-group btn-group-lg">
+			<button type="button" class="btn btn-default" data-route="music">Музыка</button>
+			<button type="button" class="btn btn-default" data-route="friends">Друзья</button>
+			<button type="button" class="btn btn-default" data-route="news">Новости</button>
+			<button type="button" class="btn btn-default" data-route="groups">Группы</button>
+			<button type="button" class="btn btn-default" data-route="photos">Фото</button>
+		</div>
+		<hr>
+		<div id="results"></div>
+	</div>
+
+
+	<script type="text/x-handlebars-template" id="headerTemplate">
+	    <h1>Данные из VK-аккаунта: {{first_name}} {{last_name}}</h1>
+	</script>
+
+	<script type="text/x-handlebars-template" id="musicTemplate">
+	    <ul class="list-group" id="audioList">
+	        {{#each list}}
+	        <li class="list-group-item">
+	            <div class="row">
+	                <div class="col-xs-10">
+	                    <span class="title">{{{artist}}} - {{{title}}}</span>
+	                </div>
+	                <div class="col-xs-2 text-right">{{formatTime duration}}</div>
+	            </div>
+	        </li>
+	        {{/each}}
+	    </ul>
+	</script>
+
+	<script type="text/x-handlebars-template" id="friendsTemplate">
+	    <div id="friendsList">
+	        {{#each list}}
+	        <div class="friend text-center">
+	            <img src="{{photo_100}}" class="img-circle">
+	            <div>{{first_name}}<br>{{last_name}}</div>
+	        </div>
+	        {{/each}}
+	    </div>
+	</script>
+
+	<script type="text/x-handlebars-template" id="newsTemplate">
+	    <div class="news">
+	        {{#each list}}
+	        {{#if text}}
+	        <div class="post">
+	            <b>{{formatDate date}}</b>
+	            <div class="post-text">{{{text}}}</div>
+	        </div>
+	        <hr>
+	        {{/if}}
+	        {{/each}}
+	    </div>
+	</script>
+
+	<script type="text/x-handlebars-template" id="groupsTemplate">
+	    <div class="news">
+	        {{#each list}}
+					{{#if name}}
+	        <div class="post">
+							<img src="{{photo_50}}" class="img-circle">
+	            <b>&nbsp;{{name}}</b>
+	        </div>
+	        <hr>
+					{{/if}}
+	        {{/each}}
+	    </div>
+	</script>
+
+	<script type="text/x-handlebars-template" id="photosTemplate">
+     {{#each list}}
+			{{#if src}}
+     <div class="photo">
+					<img src="{{src}}">
+         <div class="info">
+						<span class="glyphicon glyphicon-heart-empty"></span>
+						<span>{{likes.count}}</span>
+						<span class="glyphicon glyphicon glyphicon-pencil"></span>
+						<span>{{comments}}</span>
+						<span class="glyphicon glyphicon-log-in"></span>
+						<span>{{reposts.count}}</span>
+					</div>
+     </div>
+			{{/if}}
+     {{/each}}
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script src="http://vk.com/js/api/openapi.js"></script>
+	<script src="dist/bundle.js"></script>
+</body>
+</html>

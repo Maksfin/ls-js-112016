@@ -1,0 +1,29 @@
+include _helpers/_mixins
+include _helpers/_vars
+
+doctype html
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+html(lang="ru-RU")
+	head
+
+		include _common/_head-meta
+
+		title
+			block title
+
+		include _common/_head-bottom
+			
+	body
+		<!--[if lt IE 8]>
+		<p class="chromeframe">Похоже, что ты используешь устаревший браузер, друг. Пожалуйста, <a href="http://browsehappy.com/">скачай новый браузер абсолютно бесплатно</a> или <a href="http://www.google.com/chromeframe/?redirect=true">активируй Google Chrome Frame</a></p>
+		<![endif]-->
+		
+		block content
+		include _common/_script
+				
+

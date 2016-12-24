@@ -1,0 +1,78 @@
+.drugo-wrap {
+	margin: auto;
+	min-width: 620px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.drugo-main {
+	background: $white;
+	display: flex;
+	&__top {
+		padding: 10px 15px;
+		background: $grey;
+		position: relative;
+		> span {
+			position: absolute;
+			top: 15px;
+			left: 24px;
+			z-index: 9;
+		}
+	}
+	&__search {
+		position: relative;
+		width: 100%;
+		height: 25px;
+		padding: 0 30px;
+		border-radius: 15px;
+		background: $white;
+		border: none;
+	}
+	&__title {
+		padding: 10px 15px;
+	}
+	&__left, &__right {
+		width: 50%;
+	}
+	&__right {
+		border-left: 1px solid $grey;
+		.btn-cross--plus {
+			&:before {
+				transform: rotate(45deg);
+			}
+			&:after {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	&__list {
+		padding: 0 15px;
+		max-height: 355px;
+		overflow-y: auto;
+	}
+	&__item {
+		padding: 10px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 1px solid $grey;
+		transition: background .3s;
+		&:last-child {
+			border-bottom: 1px solid $grey;
+		}
+		&:hover {
+			background: $grey;
+
+		}
+		&-img {
+			border-radius: 50%;
+		}
+		&-name {
+			font-weight: 600;
+			margin-left: 8px;
+			max-width: 180px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
